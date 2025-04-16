@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site de avaliações da Confeitaria Thayara Polizel. Avalie nossos produtos e serviços!">
+  <title>Confeitaria Thayara Polizel</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>Confeitaria Thayara Polizel</h1>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Bem-vindo!</h2>
+      <p>Deixe sua avaliação e nos ajude a melhorar nossos produtos e serviços!</p>
+    </section>
+    <section class="form-section">
+      <h2>Avalie nossos produtos</h2>
+      <form id="review-form" action="/enviar" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="nota">Nota (1 a 5):</label>
+        <select id="nota" name="nota">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        
+        <label for="comentario">Comentário:</label>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea>
+        
+        <button type="submit">Enviar Avaliação</button>
+      </form>    
+    </section>
+    <section class="reviews">
+      <h2>Comentários Recentes</h2>
+      <ul id="reviews-list">
+          {% for avaliacao in avaliacoes %}
+          <li>
+              <strong>{{ avaliacao.nome }}</strong> (Nota: {{ avaliacao.nota }})<br>
+              {{ avaliacao.comentario }}<br>
+              <small>Enviado em: {{ avaliacao.data_envio }}</small>
+          </li>
+          {% endfor %}
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <script src="/static/script.js"></script>
+  </footer>
+</body>
+</html>

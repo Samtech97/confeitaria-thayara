@@ -1,0 +1,66 @@
+/* Paleta de Cores */
+:root {
+    --rosa-claro: #f8c2d8;
+    --dourado-escuro: #d4a373;
+    --branco: #ffffff;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--branco);
+    color: var(--dourado-escuro);
+  }
+  
+  header {
+    background-color: var(--rosa-claro);
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    color: var(--dourado-escuro);
+    font-style: italic;
+     
+   }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  .intro, .form-section, .reviews {
+    margin-bottom: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 1rem;
+  }
+  
+  input, textarea, select, button {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  button {
+    background-color: var(--dourado-escuro);
+    color: var(--branco);
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #a87f5b; /* Cor mais escura para hover */
+  }
+  
+  footer {
+    text-align: center;
+    background-color: var(--rosa-claro);
+    padding: 1rem;
+  }
+  
